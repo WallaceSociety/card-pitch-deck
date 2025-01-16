@@ -13,7 +13,7 @@ export const cards: Card[] = [
     type: 'video_question',
     key: 'asdfd',
     custom_key: 'rodeo_video',
-    videoUrl: 'https://download.samplelib.com/mp4/sample-5s.mp4',
+    videoUrl: './src/lib/videos/rodeo_video/intro.webm',
     title: "After working with hundreds of rodeos, we've identified these as the most common technical challenges. Select the ones you'd like solved",
     buttons: [
       {
@@ -301,6 +301,46 @@ export const cards: Card[] = [
   //     subText: "5 more ways we automate your rodeo's success",
   //   },
   // },
+  {
+    type: 'video_question',
+    key: 'asdfddfds',
+    custom_key: 'automated_vendor_management',
+    videoUrl: '',
+    title: "After working with hundreds of rodeos, we've identified these as the most common technical challenges. Select the ones you'd like solved",
+    buttons: [
+      {
+        label: 'Done-For-You Updates',
+        action: 'sound',
+        value: 'done_for_you_clicked',
+        detail: './src/lib/sounds/rodeo_video/done_for_you.mp3',
+      },
+      {
+        label: 'Professional Branding',
+        action: 'sound',
+        value: 'professional_branding_clicked',
+        detail: './src/lib/sounds/rodeo_video/professional_branding.mp3',
+      },
+      {
+        label: 'Attendee Communications',
+        action: 'sound',
+        value: 'attendee_communications_clicked',
+        detail: './src/lib/sounds/rodeo_video/atendee_communication.mp3',
+      },
+      {
+        label: 'Easy Social Media Scheduling',
+        action: 'sound',
+        value: 'easy_social_media_scheduling_clicked',
+        detail: './src/lib/sounds/rodeo_video/easy_social_media.mp3',
+      },
+      {
+        label: 'Managing Your Vendor & Contestant Data',
+        action: 'sound',
+        value: 'managing_vendor_contestant_data_clicked',
+        detail: './src/lib/sounds/rodeo_video/managing_your_vendors.mp3',
+      },
+    ],
+    cta: { labelNext: 'See How Easy We Can Make It', labelFinish: 'Finish' },
+  },
   {
     type: 'form',
     key: 'rodeo_registration',
