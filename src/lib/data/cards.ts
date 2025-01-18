@@ -13,7 +13,7 @@ export const cards: Card[] = [
     type: 'video_question',
     key: 'asdfd',
     custom_key: 'rodeo_video',
-    videoUrl: './src/lib/videos/rodeo_video/intro.webm',
+    videoUrl: '/videos/rodeo_video/intro.webm',
     title: "After working with hundreds of rodeos, we've identified these as the most common technical challenges. Select the ones you'd like solved",
     buttons: [
       {
@@ -64,69 +64,69 @@ export const cards: Card[] = [
         text: "I'll take care of that right away! While I'm at it, would you like me to set up the early-bird special we discussed?",
         time: '9:42 AM',
       },
-      {
-        sender: 'Carol',
-        text: 'Oh right! Yes please. Can we do $20 for the first 500 tickets?',
-        time: '9:43 AM',
-      },
-      {
-        sender: 'Brooke',
-        text: "Done! I've updated all pricing and added a counter showing tickets remaining at early-bird price. Want to see? [link]",
-        time: '9:45 AM',
-      },
-      {
-        sender: 'Carol',
-        text: 'That was fast! Looks perfect 👍',
-        emoji: '👍',
-        time: '9:46 AM',
-      },
-      {
-        sender: 'Carol',
-        text: 'While I have you - our main sponsor wants a special VIP package page. Is that something you can help with?',
-        time: '9:47 AM',
-      },
-      {
-        sender: 'Brooke',
-        text: "Absolutely! I'll create a professional landing page with:",
-        time: '9:47 AM',
-      },
-      {
-        sender: 'Brooke',
-        text: '✓ Photo gallery from last year\n✓ VIP amenities list\n✓ Mobile-friendly purchase button\n✓ Prominent sponsor recognition',
-        time: '9:47 AM',
-      },
-      {
-        sender: 'Carol',
-        text: 'Perfect - do whatever you think is best. So nice not having to figure out the technical stuff!',
-        time: '9:48 AM',
-      },
-      {
-        sender: 'Brooke',
-        text: 'By the way, I noticed your event is coming up in 30 days. I think we should:',
-        time: '9:49 AM',
-      },
-      {
-        sender: 'Brooke',
-        text: '✓ Set up automated email reminders\n✓ Create social media countdown posts\n✓ Update Your Daily Schedule\n✓ Create a title sponsor spotlight section',
-        time: '9:49 AM',
-      },
-      {
-        sender: 'Carol',
-        text: 'Wow, you guys think of everything! Yes to all of that!',
-        emoji: '🙌',
-        time: '9:50 AM',
-      },
-      {
-        sender: 'Brooke',
-        text: 'Great! We will get started right away. Anything else you need help with?',
-        time: '9:50 AM',
-      },
-      {
-        sender: 'Carol',
-        text: 'No, this is perfect. You guys make it so easy! 🙏',
-        emoji: '🙏',
-        time: '9:51 AM',
-      },
+      // {
+      //   sender: 'Carol',
+      //   text: 'Oh right! Yes please. Can we do $20 for the first 500 tickets?',
+      //   time: '9:43 AM',
+      // },
+      // {
+      //   sender: 'Brooke',
+      //   text: "Done! I've updated all pricing and added a counter showing tickets remaining at early-bird price. Want to see? [link]",
+      //   time: '9:45 AM',
+      // },
+      // {
+      //   sender: 'Carol',
+      //   text: 'That was fast! Looks perfect 👍',
+      //   emoji: '👍',
+      //   time: '9:46 AM',
+      // },
+      // {
+      //   sender: 'Carol',
+      //   text: 'While I have you - our main sponsor wants a special VIP package page. Is that something you can help with?',
+      //   time: '9:47 AM',
+      // },
+      // {
+      //   sender: 'Brooke',
+      //   text: "Absolutely! I'll create a professional landing page with:",
+      //   time: '9:47 AM',
+      // },
+      // {
+      //   sender: 'Brooke',
+      //   text: '✓ Photo gallery from last year\n✓ VIP amenities list\n✓ Mobile-friendly purchase button\n✓ Prominent sponsor recognition',
+      //   time: '9:47 AM',
+      // },
+      // {
+      //   sender: 'Carol',
+      //   text: 'Perfect - do whatever you think is best. So nice not having to figure out the technical stuff!',
+      //   time: '9:48 AM',
+      // },
+      // {
+      //   sender: 'Brooke',
+      //   text: 'By the way, I noticed your event is coming up in 30 days. I think we should:',
+      //   time: '9:49 AM',
+      // },
+      // {
+      //   sender: 'Brooke',
+      //   text: '✓ Set up automated email reminders\n✓ Create social media countdown posts\n✓ Update Your Daily Schedule\n✓ Create a title sponsor spotlight section',
+      //   time: '9:49 AM',
+      // },
+      // {
+      //   sender: 'Carol',
+      //   text: 'Wow, you guys think of everything! Yes to all of that!',
+      //   emoji: '🙌',
+      //   time: '9:50 AM',
+      // },
+      // {
+      //   sender: 'Brooke',
+      //   text: 'Great! We will get started right away. Anything else you need help with?',
+      //   time: '9:50 AM',
+      // },
+      // {
+      //   sender: 'Carol',
+      //   text: 'No, this is perfect. You guys make it so easy! 🙏',
+      //   emoji: '🙏',
+      //   time: '9:51 AM',
+      // },
     ],
     speed: 5,
     cta: { labelNext: 'See Our Other Time-Saving Features', labelFinish: 'Finish' },
@@ -136,8 +136,10 @@ export const cards: Card[] = [
     key: 'afasdfdf',
     custom_key: 'professional_branding',
     imageBefore: './src/lib/images/site_transformation/will-rogers-before.png',
+    imageBeforeObjectFit: 'contain',
     imageAfter: './src/lib/images/site_transformation/will-rogers-after.png',
-    startPosition: 25,
+    imageAfterObjectFit: 'contain',
+    startPosition: 95,
     title: 'See how professional branding transforms your digital presence and builds confidence with fans, sponsors, and sanctioning bodies. Which Brand Benefits Matter Most to You?',
     buttons: [
       {

@@ -3,6 +3,7 @@
   import { fade } from 'svelte/transition';
   import type { QuoteSlideshowCard } from '../../types/CardTypes';
   import CardWrapper from '../CardWrapper.svelte';
+  import CardCta from '../cta/CardCta.svelte';
 
   export let card: QuoteSlideshowCard;
   export let onNext: () => void;
@@ -20,7 +21,7 @@
     fontSize: card.config?.fontSize || '1.5rem',
     textColor: card.config?.textColor || '#ffffff',
     delay: card.config?.delay || 5000,
-    advanceMethod: card.config?.advanceMethod || 'both'
+    advanceMethod: card.config?.advanceMethod || 'both',
   };
 
   function nextSlide() {
@@ -56,39 +57,21 @@
 </script>
 
 <CardWrapper>
-  <div class="relative h-full flex flex-col">
+  <div class="relative flex flex-col h-full">
     {#each card.items as item, i}
-      <div
-        class="absolute inset-0 transition-opacity duration-500"
-        class:opacity-0={currentIndex !== i}
-        class:pointer-events-none={currentIndex !== i}
-      >
+      <div class="absolute inset-0 transition-opacity duration-500" class:opacity-0={currentIndex !== i} class:pointer-events-none={currentIndex !== i}>
         <!-- Background -->
         <div class="absolute inset-0">
-          <img
-            src={item.background}
-            alt={item.label}
-            class="w-full h-full object-cover"
-          />
-          <div
-            class="absolute inset-0"
-            style="background-color: {config.overlayColor}; opacity: {config.overlayOpacity};"
-          />
+          <img src={item.background} alt={item.label} class="object-cover w-full h-full" />
+          <div class="absolute inset-0" style="background-color: {config.overlayColor}; opacity: {config.overlayOpacity};" />
         </div>
 
         <!-- Content -->
-        <div
-          class="relative h-full flex flex-col items-center justify-center p-8 text-center"
-          style="font-family: {config.fontFamily}; color: {config.textColor};"
-          on:click={handleClick}
-        >
-          <h3 class="text-xl font-semibold mb-2 opacity-75">
+        <div class="relative flex flex-col items-center justify-center h-full p-8 text-center" style="font-family: {config.fontFamily}; color: {config.textColor};" on:click={handleClick} on:keydown={(e) => e.key === 'Enter' && handleClick()} tabindex="0" role="button">
+          <h3 class="mb-2 text-xl font-semibold opacity-75">
             {item.label}
           </h3>
-          <blockquote
-            class="mb-4 leading-relaxed"
-            style="font-size: {config.fontSize};"
-          >
+          <blockquote class="mb-4 leading-relaxed" style="font-size: {config.fontSize};">
             "{item.quote}"
           </blockquote>
           <p class="text-sm opacity-75">
@@ -99,33 +82,15 @@
     {/each}
 
     <!-- Progress dots -->
-    <div class="absolute bottom-20 left-0 right-0 flex justify-center gap-2">
+    <div class="absolute left-0 right-0 flex justify-center gap-2 bottom-20">
       {#each card.items as _, i}
-        <div
-          class="w-2 h-2 rounded-full transition-colors duration-200 {currentIndex === i ? 'bg-white' : 'bg-white/30'}"
-        />
+        <div class="w-2 h-2 rounded-full transition-colors duration-200 {currentIndex === i ? 'bg-white' : 'bg-white/30'}" />
       {/each}
     </div>
 
     <!-- CTA -->
     {#if hasSeenAllSlides}
-      <div 
-        class="absolute bottom-0 left-0 right-0 p-4"
-        transition:fade={{ duration: 300 }}
-      >
-        <button
-          on:click={onNext}
-          class="w-full px-4 py-3 bg-white text-black rounded-md
-                 hover:bg-white/90 transition-colors font-medium"
-        >
-          {card.cta.labelNext}
-        </button>
-        {#if card.cta.subText}
-          <p class="text-center text-sm text-white/75 mt-2">
-            {card.cta.subText}
-          </p>
-        {/if}
-      </div>
+      <CardCta {onNext} {isLastCard} labelNext={card.cta.labelNext} labelFinish={card.cta.labelFinish} subText={card.cta.subText} />
     {/if}
   </div>
 </CardWrapper>
