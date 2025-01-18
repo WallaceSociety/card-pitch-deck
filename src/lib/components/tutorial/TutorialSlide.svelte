@@ -17,23 +17,23 @@
     if (point.zoom && !isZoomed) {
       isZoomed = true;
       activePoint = point;
-    }    
+    }
   }
 
   function handleBackgroundClick() {
     if (isZoomed && activePoint) {
-      isZoomed = false;
-      dispatch('pointClick', activePoint);
-      activePoint = null;
-      
+      isZoomed = false; // Reset zoom state
+      activePoint = null; // Remove the active point reference
+      dispatch('pointClick', activePoint); // Dispatch a point click event
       if (allPointsClicked) {
-        dispatch('complete');
+        dispatch('complete'); // Dispatch completion event if all points are clicked
       }
     }
   }
 
   function handlePointComplete(event: CustomEvent<TutorialPoint>) {
     const point = event.detail;
+    console.log(point,'aaa');
     if (point.zoom) {
       handlePointClick(point);
     } else {
@@ -46,10 +46,15 @@
 
   $: zoomStyle = isZoomed && activePoint ? `
     transform: scale(3) translate(
-      ${-(activePoint.x - container?.clientWidth / 6)}px,
-      ${-(activePoint.y - container?.clientHeight / 6)}px
+      ${-(activePoint.x - container?.clientWidth / 2)}px,
+      ${-(activePoint.y - container?.clientHeight / 2)}px
     );
-  ` : '';
+  ` : ''; // Zoom style for zooming in
+
+  // Ensure the zoom is properly cleared when zooming out
+  $: if (!isZoomed) {
+    zoomStyle = ''; // Reset the zoom style when zooming out
+  }
 </script>
 
 <div 

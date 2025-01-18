@@ -13,7 +13,7 @@ export const cards: Card[] = [
     type: 'video_question',
     key: 'asdfd',
     custom_key: 'rodeo_video',
-    videoUrl: './src/lib/videos/rodeo_video/intro.webm',
+    videoUrl: './src/lib/data/videos/rodeo_video/intro.webm',
     title: "After working with hundreds of rodeos, we've identified these as the most common technical challenges. Select the ones you'd like solved",
     buttons: [
       {
@@ -56,7 +56,7 @@ export const cards: Card[] = [
     messages: [
       {
         sender: 'Carol',
-        text: "Hey, we need to update our ticket prices for next month's rodeo. General admission needs to be $25 now.",
+        text: "Hey, we need to update our ticket prices for next month's rodeo. General admission needs to be $25 now. http://localhost:3000",
         time: '9:42 AM',
       },
       {
@@ -196,74 +196,74 @@ export const cards: Card[] = [
       labelFinish: 'Finish',
     },
   },
-  // {
-  //   type: 'tutorial_slideshow',
-  //   key: 'afdsfasd',
-  //   custom_key: 'social_post_tutorial',
-  //   slides: [
-  //     {
-  //       image: 'https://placehold.co/600x1200/orange/white/png?text=Scheduling+Interface',
-  //       points: [
-  //         {
-  //           x: 50,
-  //           y: 150,
-  //           actions: [{ action: 'sound', audio: 'https://assets.mixkit.co/active_storage/sfx/2569/2569.wav' }],
-  //           zoom: false,
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       image: 'https://placehold.co/600x1200/orange/white/png?text=Dashboard+Overview',
-  //       points: [
-  //         {
-  //           x: 100,
-  //           y: 85,
-  //           actions: [{ action: 'sound', audio: 'https://assets.mixkit.co/active_storage/sfx/2569/2569.wav' }],
-  //           zoom: true,
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       image: 'https://placehold.co/600x1200/orange/white/png?text=Post+Creation+Interface',
-  //       points: [
-  //         {
-  //           x: 60,
-  //           y: 75,
-  //           actions: [{ action: 'popup', content: 'All your accounts connect here - Facebook, Instagram, X, LinkedIn are all supported. Need another platform? Just ask our team will add it for you.' }],
-  //           zoom: true,
-  //         },
-  //         {
-  //           x: 140,
-  //           y: 200,
-  //           actions: [{ action: 'sound', audio: 'https://assets.mixkit.co/active_storage/sfx/2569/2569.wav' }],
-  //           zoom: true,
-  //         },
-  //         {
-  //           x: 200,
-  //           y: 250,
-  //           actions: [{ action: 'popup', content: "Upload or select existing gallery images, videos and links - we'll optimize them for each platform and track the results." }],
-  //           zoom: true,
-  //         },
-  //         {
-  //           x: 300,
-  //           y: 300,
-  //           actions: [{ action: 'sound', audio: 'https://assets.mixkit.co/active_storage/sfx/2569/2569.wav' }],
-  //           zoom: false,
-  //         },
-  //       ],
-  //     },
-  //   ],
-  //   cta: { labelNext: 'Next', labelFinish: 'View More Features' },
-  // },
-  // {
-  //   type: 'image_carousel',
-  //   key: 'dsafsd',
-  //   custom_key: 'event_gallery',
-  //   images: ['https://placehold.co/600x1200/orange/white/png?text=Bull+Riding', 'https://placehold.co/600x1200/blue/white/png?text=Barrel+Racing', 'https://placehold.co/600x1200/green/white/png?text=Crowd+Cheer'],
-  //   objectFit: 'cover',
-  //   backgroundColor: '#000000',
-  //   cta: { labelNext: 'Next', labelFinish: 'Finish' },
-  // },
+  {
+    type: 'tutorial_slideshow',
+    key: 'afdsfasd',
+    custom_key: 'social_post_tutorial',
+    slides: [
+      {
+        image: 'https://placehold.co/600x1200/orange/white/png?text=Scheduling+Interface',
+        points: [
+          {
+            x: 50,
+            y: 150,
+            actions: [{ action: 'sound', audio: 'https://assets.mixkit.co/active_storage/sfx/2569/2569.wav' }],
+            zoom: false,
+          },
+        ],
+      },
+      {
+        image: 'https://placehold.co/600x1200/orange/white/png?text=Dashboard+Overview',
+        points: [
+          {
+            x: 100,
+            y: 85,
+            actions: [{ action: 'sound', audio: 'https://assets.mixkit.co/active_storage/sfx/2569/2569.wav' }],
+            zoom: true,
+          },
+        ],
+      },
+      {
+        image: 'https://placehold.co/600x1200/orange/white/png?text=Post+Creation+Interface',
+        points: [
+          {
+            x: 60,
+            y: 75,
+            actions: [{ action: 'popup', content: 'All your accounts connect here - Facebook, Instagram, X, LinkedIn are all supported. Need another platform? Just ask our team will add it for you.' }],
+            zoom: true,
+          },
+          {
+            x: 140,
+            y: 200,
+            actions: [{ action: 'sound', audio: 'https://assets.mixkit.co/active_storage/sfx/2569/2569.wav' }],
+            zoom: true,
+          },
+          {
+            x: 200,
+            y: 250,
+            actions: [{ action: 'popup', content: "Upload or select existing gallery images, videos and links - we'll optimize them for each platform and track the results." }],
+            zoom: true,
+          },
+          {
+            x: 300,
+            y: 300,
+            actions: [{ action: 'sound', audio: 'https://assets.mixkit.co/active_storage/sfx/2569/2569.wav' }],
+            zoom: false,
+          },
+        ],
+      },
+    ],
+    cta: { labelNext: 'Next', labelFinish: 'View More Features' },
+  },
+  {
+    type: 'image_carousel',
+    key: 'dsafsd',
+    custom_key: 'event_gallery',
+    images: ['https://placehold.co/600x1200/orange/white/png?text=Bull+Riding', 'https://placehold.co/600x1200/blue/white/png?text=Barrel+Racing', 'https://placehold.co/600x1200/green/white/png?text=Crowd+Cheer'],
+    objectFit: 'cover',
+    backgroundColor: '#000000',
+    cta: { labelNext: 'Next', labelFinish: 'Finish' },
+  },
   {
     type: 'video_question',
     key: 'asdfddfds',

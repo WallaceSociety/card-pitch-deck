@@ -11,24 +11,31 @@
 
   let currentSlideIndex = 0;
   let showCta = false;
-
-  $: currentSlide = card.slides[currentSlideIndex];
-  $: isLastSlide = currentSlideIndex === card.slides.length - 1;
-  $: allPointsClicked = !currentSlide.points || currentSlide.points.every(p => 
-    $tutorialStore.points[`${currentSlideIndex}-${p.x}-${p.y}`]
-  );
+  
+  // Reactive variables
+  $: currentSlide = card?.slides?.[currentSlideIndex];
+  $: isLastSlide = currentSlideIndex === card?.slides?.length - 1;
+  
+  // State tracking whether all points are clicked for the current slide
+  $: allPointsClicked = currentSlide?.points
+    ? currentSlide.points.every(p => $tutorialStore.points[`${currentSlideIndex}-${p.x}-${p.y}`])
+    : false;
 
   function handlePointClick() {
     if (allPointsClicked) {
       if (isLastSlide) {
-        showCta = true;
+        showCta = true; // Show CTA on last slide
       } else {
-        currentSlideIndex++;
+        // Wait for the current slide to complete before moving to the next
+        if (currentSlideIndex < card.slides.length - 1) {
+          currentSlideIndex++; // Only increment if the current slide is complete
+        }
       }
     }
   }
 
   function handleNext() {
+    // Proceed to the next tutorial card (after completing the current one)
     onNext();
   }
 </script>
@@ -47,8 +54,7 @@
       <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
         <button
           on:click={handleNext}
-          class="w-full px-4 py-3 bg-white text-black rounded-md
-                 hover:bg-white/90 transition-colors font-medium"
+          class="w-full px-4 py-3 bg-white text-black rounded-md hover:bg-white/90 transition-colors font-medium"
         >
           {isLastCard ? card.cta.labelFinish : card.cta.labelNext}
         </button>
