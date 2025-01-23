@@ -179,6 +179,6 @@
   </div>
 </CardWrapper>
 
-<audio bind:this={messageSound} src="/src/lib/sounds/message.mp3" preload="auto"></audio>
+<audio bind:this={messageSound} src="./sounds/message.mp3" preload="auto"></audio>
 
-<audio bind:this={typingSound} src="/src/lib/sounds/typing.mp3" preload="auto"></audio>
+<audio bind:this={typingSound} src="./sounds/typing.mp3" preload="auto"></audio>
