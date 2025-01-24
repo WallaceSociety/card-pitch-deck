@@ -5,7 +5,7 @@ export const cards: Card[] = [
     type: 'image',
     key: 'asfasdf',
     custom_key: 'event_image',
-    src: 'https://placehold.co/600x1200/orange/',
+    src: 'https://placehold.co/600x1200',
     objectFit: 'cover',
     cta: { labelNext: 'Next', labelFinish: 'Finish' },
   },
